@@ -1,5 +1,3 @@
-import { Card } from '#build/components'; import { Card } from
-'#build/components'; import { Card } from '#build/components';
 <script setup lang="ts">
 interface CardProps {
   card: {
@@ -8,11 +6,15 @@ interface CardProps {
     author: string;
   };
 }
+const { isDarkMode } = useDarkMode();
 const props = defineProps<CardProps>();
 </script>
 
 <template>
-  <div class="card">
+  <div
+    class="card"
+    :style="isDarkMode ? { backgroundColor: 'black', color: 'white' } : null"
+  >
     <img :src="card.img" alt="" />
     <div class="content">
       <h3>{{ card.title }}</h3>

@@ -4,7 +4,7 @@ const { isDarkMode, toggleDarkMode } = useDarkMode();
 
 <template>
   <nav :style="isDarkMode ? { backgroundColor: 'rgb(73,72,72)' } : null">
-    <div :style="isDarkMode ? { backgroundColor: 'white' } : null">
+    <div :style="isDarkMode ? { color: 'white' } : null">
       <h1>Artikle</h1>
       <label class="switch">
         <input type="checkbox" v-model="isDarkMode" @click="toggleDarkMode" />
